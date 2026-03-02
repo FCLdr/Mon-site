@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - L.E.D</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">L.E.D.</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une découverte accidentelle et méconnue</strong><br/><br/>
+                L'histoire de la LED commence bien avant l'ère de l'informatique. En 1907, un expérimentateur britannique nommé Henry Round, travaillant pour les laboratoires Marconi, remarque un phénomène étrange : en appliquant une tension sur un cristal de carbure de silicium (un matériau utilisé pour les abrasifs), il observe une faible lueur jaune. Il vient de découvrir l'électroluminescence, mais faute d'applications pratiques à l'époque, sa découverte tombe dans l'oubli pendant vingt ans.<br/><br/>
+
+                C’est le physicien russe Oleg Lossev qui, en 1927, mène les premières recherches rigoureuses. Il comprend que la lumière n'est pas produite par la chaleur (comme dans une ampoule classique) mais par un processus électronique pur. Il publie ses travaux à l'échelle internationale, jetant les bases théoriques de ce que nous utilisons aujourd'hui.<br/><br/>
+
+                <img class="avatar" src="https://blog.atome.my/wp-content/uploads/2022/02/gosund.jpeg" alt="LED Illustration">
+
+                <strong>2. Le fonctionnement : Une histoire de "sauts" électroniques</strong><br/><br/>
+                Pour comprendre comment une LED brille, il faut plonger dans le monde de la physique des semi-conducteurs. Une LED est composée de deux couches de matériaux légèrement différents : la couche N (qui possède un surplus d'électrons) et la couche P (qui présente des "trous", c'est-à-dire un manque d'électrons).<br/><br/>
+
+                Lorsqu'on branche la diode, le courant pousse les électrons à franchir la frontière entre ces deux couches. Lorsqu'un électron rencontre un "trou", il s'y installe et libère un surplus d'énergie. Cette énergie est évacuée sous la forme d'une particule de lumière appelée photon. La couleur de la lumière dépend de la nature des matériaux utilisés : selon la distance du "saut" énergétique que doit faire l'électron, la lumière sera rouge, verte ou jaune.<br/><br/>
+
+                <a href="https://www.youtube.com/watch?v=IjAacXDQxFM" class="gradient-link">https://www.youtube.com/watch?v=IjAacXDQxFM</a><br/><br/>
+
+                <img class="avatar" src="https://image.son-video.com/images/illustration/guides/Comprendre-les-technologies-TV-LCD-LED-et-OLED/Structure-TV-LCD-LED.png" alt="Structure LED">
+
+                <strong>3. L'évolution et le défi de la lumière bleue</strong><br/><br/>
+                Pendant des décennies, les ingénieurs n'ont réussi à produire que des LED rouges (créées en 1962 par Nick Holonyak Jr.), puis vertes et jaunes. Si ces petites lumières étaient parfaites pour les voyants des calculatrices ou des réveils, elles ne permettaient pas d'éclairer une pièce. Pour obtenir de la lumière blanche, il fallait impérativement réussir à créer une LED bleue, car le mélange du rouge, du vert et du bleu permet de recréer tout le spectre lumineux.<br/><br/>
+
+                Le défi était immense : les matériaux nécessaires pour le bleu étaient extrêmement difficiles à manipuler sous forme de cristaux parfaits. Ce n'est qu'en 1994 que trois chercheurs, Shuji Nakamura, Isamu Akasaki et Hiroshi Amano, réussissent cet exploit technologique. Cette invention a été si importante pour l'humanité (permettant un éclairage mondial beaucoup moins gourmand en énergie) qu'ils ont reçu le Prix Nobel de Physique en 2014.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                L'évolution de la LED a totalement transformé notre rapport à l'énergie. Contrairement à l'ampoule d'Edison qui perdait 95% de son énergie en chaleur, la LED est incroyablement efficace, transformant la quasi-totalité de l'électricité en lumière. Elle est également robuste, car elle ne possède pas de filament fragile, et peut fonctionner pendant plus de 50 000 heures, soit environ 15 à 20 ans d'utilisation domestique.
+            </h4>
+
+            <img class="avatar" src="https://www.ledsmaster.com/wp-content/uploads/history-of-LED-light.jpg" alt="Histoire LED">
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

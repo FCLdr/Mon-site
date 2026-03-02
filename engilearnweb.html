@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .25), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .2), transparent 55%), var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(1200px, 92%); margin-inline: auto; }
+
+        /* Navbar */
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, .35);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .logo { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--accent-2)); font-weight: 700; }
+        .navlinks { display: flex; gap: 20px; }
+        .navlinks a { opacity: .8; padding: 10px 12px; border-radius: 12px; transition: 0.3s; }
+        .navlinks a:hover { opacity: 1; background: var(--glass); }
+
+        /* Hero & Sections */
+        .hero { padding: 80px 0 40px; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; margin-bottom: 60px; }
+        h1 { font-size: clamp(34px, 4.5vw, 64px); line-height: 1.05; margin: 12px 0; }
+        h2 { font-size: 2.5rem; margin-top: 60px; margin-bottom: 10px; }
+        .gradient-text { background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; }
+        
+        /* Layout des Grilles */
+        .tech-grid { display: flex; flex-direction: column; gap: 30px; }
+        .projets-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; transition: 0.3s; }
+        .projets-grid:hover { transform: translateY(-5px); border-color: var(--accent-2); }
+
+        /* Cards images */
+        .avatar-card { position: relative; border: 1px solid var(--border); background: #1a1f2e; border-radius: var(--radius); padding: 15px; box-shadow: var(--shadow); isolation: isolate; }
+        .avatar { border-radius: 16px; aspect-ratio: 1/1; object-fit: cover; width: 100%; height: 250px; }
+        .ma-boite { padding: 10px; display: flex; flex-direction: column; justify-content: center; font-size: 1.1rem; }
+
+        /* Glow effect */
+        .rings::before {
+            content: ""; position: absolute; inset: -15%; z-index: -1;
+            background: radial-gradient(circle, rgba(11, 244, 93, 0.1), transparent 70%);
+            filter: blur(30px); animation: float 6s ease-in-out infinite alternate;
+        }
+        @keyframes float { to { transform: translateY(10px); } }
+
+        /* Animations Reveal */
+        .reveal { opacity: 0; transform: translateY(20px); transition: .8s cubic-bezier(.2, .8, .2, 1); }
+        .revealed { opacity: 1; transform: none; }
+
+        @media (max-width: 850px) {
+            .hero-grid, .projets-grid { grid-template-columns: 1fr; }
+            .avatar { height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="nav" href="engilearnloginform.html">
+                <div class="logo">A</div>
+                <strong style="margin-left:10px">Account</strong>
+            </a>
+            <nav class="navlinks">
+                <a href="#concepts">💡 Technologies</a>
+                <a href="#ressources">📚 Ressources</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1 class="reveal">Bonjour, je suis <span class="gradient-text">FCL</span>, passionné d'ingénierie</h1>
+                    <p class="reveal" style="font-size: 1.2rem; opacity: 0.9;">Sur ce site, je mets à disposition des ressources et des technologies dans le domaine scientifique.</p>
+                </div>
+                <div class="avatar-card reveal">
+                    <img class="avatar" src="https://cdn.pixabay.com/photo/2024/06/14/11/07/robotic-hand-8829573_1280.jpg" alt="Main robotique">
+                    <div class="rings"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepts">
+            <h2 class="reveal">Technologies</h2>
+            <p class="reveal" style="margin-bottom: 40px;">Découvrez plusieurs technologies fondamentaux de l'ingénierie. </p>
+
+            <div class="tech-grid">
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://www.ledmyplace.com/cdn/shop/articles/some-important-things-to-learn-about-led-lights-297998_1100x.jpg?v=1734859651" alt="LED">
+                        <h3>L.E.D.</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="led.html">
+                            <strong>La LED est un composant opto-électronique capable d’émettre de la lumière lorsqu’il est parcouru par un courant électrique. Contrairement aux ampoules classiques, elle utilise la luminescence d'un matériau semi-conducteur. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://img.freepik.com/photos-gratuite/triangle-bermudes-neon-mystique_23-2151628226.jpg?semt=ais_hybrid&w=740&q=80" alt="Avion">
+                        <h3>Avion</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="avion.html">
+                            <strong>Un avion vole grâce à la portance. En circulant autour de l'aile, l'air crée une dépression sur le dessus (extrados) et une pression dessous (intrados), ce qui aspire l'appareil vers le haut. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://png.pngtree.com/thumb_back/fh260/background/20250427/pngtree-modern-mri-machine-in-a-dimly-lit-room-with-monitors-displaying-image_17236594.jpg" alt="IRM">
+                        <h3>IRM</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="irm.html">
+                            <strong>L’IRM utilise un aimant surpuissant pour faire réagir les atomes d’hydrogène du corps humain. En analysant leur retour à l'état normal, un ordinateur reconstruit une image 3D ultra-précise des tissus mous. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://i.etsystatic.com/47162321/r/il/22465d/5351451742/il_fullxfull.5351451742_g2cj.jpg" alt="3D Print">
+                        <h3>Imprimante 3D</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="imprimante3d.html">
+                            <strong>Elle crée des objets en déposant de fines couches de matière (plastique, métal, résine) les unes sur les autres. On passe d'un modèle numérique (CAO) à un objet physique réel. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://png.pngtree.com/thumb_back/fh260/background/20241007/pngtree-mobile-gps-map-with-pin-icon-centered-navigation-on-smartphone-location-image_16307963.jpg" alt="GPS">
+                        <h3>GPS</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="gps.html">
+                            <strong>Le GPS repose sur une constellation de satellites. En mesurant le temps que met le signal pour voyager entre plusieurs satellites et votre récepteur, l'appareil calcule votre position exacte par trilatération. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://www.neozone.org/blog/wp-content/uploads/2025/01/invention-innovation-panneaux-solaires-nuit-003.jpg.webp" alt="Solaire">
+                        <h3>Panneau Solaire</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="panneausolaire.html">
+                            <strong>Les cellules en silicium du panneau captent les photons de la lumière solaire pour libérer des électrons, créant ainsi un courant électrique continu. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://asset.conrad.com/media10/isa/160267/c1/-/de/AdobeStock_499670183/neue-akku-technologie.jpg" alt="Pile">
+                        <h3>Pile</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="pile.html">
+                            <strong>Une pile transforme l'énergie d'une réaction chimique entre deux métaux (anode et cathode) en énergie électrique. C'est un générateur de courant continu portatif. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://images.unsplash.com/photo-1706888413264-429c55141c98?q=80&w=3000" alt="Moteur">
+                        <h3>Moteur à Combustion</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="moteurcombustion.html">
+                            <strong>Ce moteur transforme l'énergie thermique d'une explosion (mélange air-carburant) en mouvement mécanique. Le piston monte et descend, faisant tourner un vilebrequin. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://wallpapers.com/images/hd/blurred-lights-dslr-camera-photography-z1z5nn4asvlk8cok.jpg" alt="Caméra">
+                        <h3>Caméra</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="camera.html">
+                            <strong>La lumière passe par un objectif pour frapper un capteur (CCD ou CMOS). Chaque petit photosite transforme la lumière en signal électrique pour former les pixels de l'image. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projets-grid reveal">
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://demolinux.org/wp-content/uploads/2020/06/meilleur-processeur-gaming-2020.jpg" alt="CPU">
+                        <h3>Processeur</h3>
+                    </div>
+                    <div class="ma-boite">
+                        <a href="processeur.html">
+                            <strong>C'est le cerveau de l'ordinateur. Composé de milliards de mini-interrupteurs (transistors), il traite des milliards d'opérations logiques par seconde pour exécuter vos programmes. <span class="gradient-text">Voir plus</span></strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ressources">
+            <h2 class="reveal">Ressources</h2>
+            <p class="reveal" style="margin-bottom: 40px;">Je vous mets à disposition tous mes cours dans les domaines scientifiques.</p>
+
+            <div class="tech-grid">
+                <div class="hero-grid reveal">
+                    <div class="ma-boite">
+                        <h1>Tous mes cours de <a href="engilearnressourcemath.html"><span class="gradient-text">Mathématiques</span></a></h1>
+                    </div>
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://www.uml.edu/Images/math-equations_tcm18-331050.jpg?w=x" alt="Maths">
+                    </div>
+                </div>
+
+                <div class="hero-grid reveal">
+                    <div class="ma-boite">
+                        <h1>Tous mes cours d'<a href="engilearnressourcesi.html"><span class="gradient-text">Ingénierie (SI)</span></a></h1>
+                    </div>
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://img1.wallspic.com/previews/4/7/6/9/29674/29674-tech-glass-water-simulation-structure-x750.jpg" alt="SI">
+                    </div>
+                </div>
+
+                
+                <div class="hero-grid reveal">
+                    <div class="ma-boite">
+                        <h1>Tous mes cours de <a href="engilearnressourcensi.html"><span class="gradient-text">NSI</span></a></h1>
+                    </div>
+                    <div class="avatar-card">
+                        <img class="avatar" src="https://www.infopoint-security.de/media/hacker-17_724x407_acf_cropped.jpg" alt="NSI">
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 80px; color: var(--muted);">
+        <p>&copy; <span id="year"></span>, Made by FCL.</p>
+    </footer>
+
+    <script>
+        // Mise à jour automatique de l'année
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Animation d'apparition au défilement
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

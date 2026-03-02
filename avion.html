@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - Avion</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">Avion</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Des précurseurs audacieux et le premier saut</strong><br/><br/>
+                Bien avant les moteurs, l'homme a observé les oiseaux. Léonard de Vinci en dessinait déjà les plans au XVe siècle, mais c'est au XIXe siècle que l'ingénieur Clément Ader marque l'histoire. En 1890, à bord d'une machine baptisée "Éole" ressemblant à une chauve-souris géante, il aurait décollé de quelques centimètres. Cependant, le véritable tournant historique a lieu le 17 décembre 1903 : les frères Orville et Wilbur Wright réalisent le premier vol motorisé et contrôlé à Kitty Hawk.<br/><br/>
+
+                <img class="avatar" src="https://images.unsplash.com/photo-1565614873782-ec6ef19e18f1?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Premier Avion">
+
+                <strong>2. Le fonctionnement : Une histoire de pression et de portance</strong><br/><br/>
+                Pour qu'un avion de plusieurs tonnes reste en l'air, il doit équilibrer quatre forces : le poids, la poussée, la traînée et la portance. Tout se joue dans la forme de l'aile. En avançant, l'air circule plus vite sur le dessus de l'aile que dessous, créant une dépression qui "aspire" l'avion vers le haut.<br/><br/>
+
+                <a href="https://www.youtube.com/watch?v=pTd5nPFpjJY" class="gradient-link">https://www.youtube.com/watch?v=pTd5nPFpjJY</a><br/><br/>
+
+                <img class="avatar" src="https://parlonssciences.ca/sites/default/files/2025-01/mouvement_de_lair_profil_aerodynamique.png" alt="Portance">
+
+                <strong>3. L'évolution et le défi du franchissement du mur du son</strong><br/><br/>
+                Pendant des décennies, les avions étaient faits de bois et de toile. Le grand défi est survenu avec la Seconde Guerre mondiale : aller plus vite. En approchant la vitesse du son (1 224 km/h), l'air devient "solide". Ce n'est qu'en 1947 que Chuck Yeager brise officiellement ce mur à bord du Bell X-1, ouvrant l'ère du moteur à réaction.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                L'aviation a supprimé les barrières géographiques. Aujourd'hui, le défi est de devenir "propre" avec des matériaux composites légers et l'exploration de l'hydrogène ou de l'électrique pour réduire l'empreinte carbone d'une industrie qui transporte 4 milliards de passagers par an.
+            </h4>
+
+            <img class="avatar" src="https://www.shutterstock.com/image-illustration/3d-illustration-flight-evolution-600nw-1420443281.jpg" alt="Histoire Aviation">
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

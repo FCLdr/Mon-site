@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - GPS</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">GPS</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une invention militaire devenue indispensable</strong><br/><br/>
+                L’histoire du GPS commence en pleine guerre froide. À la fin des années 1950, l'observation de l'effet Doppler sur le satellite Spoutnik permet de comprendre comment localiser un objet depuis l'espace. Le programme NAVSTAR GPS est lancé dans les années 1970 par l'armée américaine. Initialement réservé aux militaires, il a été ouvert au public avec une précision totale en 2000 sous la présidence de Bill Clinton.<br/><br/>
+
+                <img class="avatar" src="https://wallpapercave.com/wp/wp3712698.jpg" alt="Satellite GPS">
+
+                <strong>2. Le fonctionnement : une triangulation venue de l’espace</strong><br/><br/>
+                Le GPS repose sur une constellation d’au moins 24 satellites. Chaque satellite envoie sa position et l’heure précise (via une horloge atomique). Votre récepteur (smartphone) mesure le temps que met le signal pour arriver. <br/><br/>
+                Avec trois satellites, l’appareil estime une position ; avec quatre, il obtient une précision parfaite incluant l’altitude. Ce procédé s’appelle la <strong>trilatération</strong>.<br/><br/>
+
+                
+
+                <a href="https://www.youtube.com/watch?v=V51dGqHw_24" class="gradient-link">https://www.youtube.com/watch?v=V51dGqHw_24</a><br/><br/>
+
+                <img class="avatar" src="https://www.frandroid.com/wp-content/uploads/2023/01/4.jpg" alt="Constellation Satellites">
+
+                <strong>3. L’évolution et la précision : un usage mondial</strong><br/><br/>
+                Le GPS n'est plus seul. D'autres systèmes comme <strong>Galileo</strong> (Europe), <strong>GLONASS</strong> (Russie) ou <strong>BeiDou</strong> (Chine) travaillent désormais ensemble pour offrir une précision pouvant atteindre quelques centimètres dans certains domaines professionnels.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                Il a transformé la logistique mondiale, la sécurité (secours, appels d'urgence) et même la finance (synchronisation des serveurs bancaires). C'est aujourd'hui l'un des piliers invisibles mais essentiels de notre civilisation moderne.
+            </h4>
+
+            <img class="avatar" src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/Key_Milestones_in_the_Evolution_of_GPS_Technology_480x480.png?v=1755247082" alt="Chronologie GPS">
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - Cours de Maths</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        /* Navbar */
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        /* Suppression du soulignement global pour les liens de navigation */
+        .brand { 
+            display: flex; 
+            gap: 12px; 
+            align-items: center; 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        /* Hero Header */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Grid de Cours */
+        .cours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding-bottom: 60px;
+        }
+
+        /* Les cartes n'ont plus de soulignement */
+        .cours-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none; /* Enlève le soulignement */
+        }
+
+        .cours-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-2);
+            box-shadow: 0 0 20px rgba(11, 244, 93, 0.15);
+        }
+
+        .cours-card h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none; /* Sécurité anti-soulignement */
+        }
+
+        .cours-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none; /* Enlève le soulignement sur le texte "Accéder" */
+            font-size: 14px;
+        }
+
+        .btn-link::after {
+            content: "→";
+            transition: transform 0.2s;
+        }
+
+        .cours-card:hover .btn-link::after {
+            transform: translateX(5px);
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        /* Animation au chargement */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero reveal">
+            <h1>Cours de SI</h1>
+            <p style="color: var(--muted);">Fiches de révision haute précision</p>
+        </section>
+
+        <div class="cours-grid">
+            <a href="C:\Users\Eleve\Documents\Site NSI\SI\cours PUISSANCE ET RENDEMENT.odt" class="cours-card reveal" style="animation-delay: 0.1s;">
+                <div>
+                    <h3>Rendement et puissance</h3>
+                    
+                </div>
+                <span class="btn-link">Accéder au cours</span>
+            </a>
+
+            <a href="C:\Users\Eleve\Documents\Site NSI\SI\cour LES LIAISONS MÉCANIQUES.odt" class="cours-card reveal" style="animation-delay: 0.2s;">
+                <div>
+                    <h3>Les liaisons</h3>
+                    
+                </div>
+                <span class="btn-link">Accéder au cours</span>
+            </a>
+
+            <a href="C:\Users\Eleve\Documents\Site NSI\SI\cour CINÉMATIQUE.odt" class="cours-card reveal" style="animation-delay: 0.3s;">
+                <div>
+                    <h3>Cinématique</h3>
+                    
+                </div>
+                <span class="btn-link">Accéder au cours</span>
+            </a>
+
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

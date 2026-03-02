@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - L'Imprimante 3D</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">L'Imprimante 3D</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une invention née de la "stéréolithographie"</strong><br/><br/>
+                L'idée de fabriquer des objets couche par couche remonte aux années 1980. En 1984, l'américain Chuck Hull invente la stéréolithographie, un procédé qui permet de durcir de la résine liquide à l'aide de rayons UV. <br/><br/>
+
+                Peu après, d'autres méthodes apparaissent, comme le dépôt de fil fondu (FDM). Longtemps réservée aux grandes industries pour créer des prototypes coûteux, l'impression 3D s'est démocratisée dans les années 2010, devenant accessible aux particuliers et aux petites entreprises.<br/><br/>
+
+                <img class="avatar" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000" alt="Impression 3D en cours">
+
+                <strong>2. Le fonctionnement : de l'image numérique à l'objet réel</strong><br/><br/>
+                Contrairement à la fabrication traditionnelle qui retire de la matière (comme sculpter du bois), l'imprimante 3D fonctionne par **fabrication additive**. Le processus se déroule en trois étapes :<br/><br/>
+                * <strong>La modélisation :</strong> On crée un dessin 3D sur ordinateur (logiciel CAO).<br/>
+                * <strong>Le découpage (Slicing) :</strong> Un logiciel spécial découpe l'objet en milliers de tranches horizontales très fines.<br/>
+                * <strong>L'impression :</strong> La machine dépose de la matière (plastique, métal ou même béton) couche après couche. Chaque couche fusionne avec la précédente pour former l'objet final.<br/><br/>
+
+                <a href="https://www.youtube.com/watch?v=giVjeTCE7Ck" class="gradient-link">https://www.youtube.com/watch?v=giVjeTCE7Ck</a><br/><br/>
+
+                <img class="avatar" src="https://vincmazet.github.io/physique-essentielle/_images/imprimante-3d.png" alt="Schéma fonctionnement impression 3D">
+
+                <strong>3. Une diversité de matériaux surprenante</strong><br/><br/>
+                Aujourd'hui, on n'imprime plus seulement du plastique. Les technologies actuelles permettent d'utiliser :<br/>
+                * <strong>Des métaux :</strong> pour l'aéronautique et les pièces moteurs.<br/>
+                * <strong>Des tissus biologiques :</strong> pour créer des prothèses ou, à l'avenir, des organes.<br/>
+                * <strong>De la nourriture :</strong> chocolat ou pâte pour des formes complexes.<br/>
+                * <strong>Du béton :</strong> pour imprimer des maisons entières en quelques jours.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                L'impression 3D permet de créer des objets personnalisés à l'infini sans avoir besoin de moules industriels. Elle réduit le gaspillage de matière et permet de fabriquer des pièces aux formes impossibles à réaliser autrement. C'est un pilier de la "nouvelle révolution industrielle" qui rapproche la fabrication du consommateur final.<br/><br/>
+
+                <img class="avatar" src="https://img.freepik.com/photos-gratuite/gros-plan-bras-robotique-imprimant-maison-3d_23-2148906560.jpg?w=1000" alt="Impression 3D d'une maison">
+            </h4>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

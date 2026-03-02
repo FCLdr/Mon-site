@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - Moteur à Combustion</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">Moteur à Combustion</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une invention qui a changé le monde industriel</strong><br/><br/>
+                L’histoire commence au XIXᵉ siècle. En 1860, Étienne Lenoir crée le premier moteur viable, mais c'est l'allemand <strong>Nikolaus Otto</strong> qui, en 1876, perfectionne le cycle à quatre temps. Karl Benz l'utilisera ensuite pour lancer l'ère de l'automobile individuelle.<br/><br/>
+
+                <img class="avatar" src="https://cdn.aptoide.com/imgs/c/8/3/c83414298fbfe82178bf08c2bf64d54c_fgraphic.jpg" alt="Moteur Ancien">
+
+                <strong>2. Le fonctionnement : une explosion contrôlée</strong><br/><br/>
+                Le moteur transforme l’énergie chimique du carburant en force mécanique. Dans un cycle à quatre temps, tout se joue dans le cylindre :
+                <br/><br/>
+                * <strong>Admission :</strong> Aspiration du mélange air/carburant.<br/>
+                * <strong>Compression :</strong> Le piston remonte et presse le mélange.<br/>
+                * <strong>Explosion :</strong> L'étincelle projette le piston vers le bas.<br/>
+                * <strong>Échappement :</strong> Expulsion des gaz brûlés.<br/><br/>
+                
+                Ce va-et-vient fait tourner le <strong>vilebrequin</strong>, qui finit par faire tourner les roues.<br/><br/>
+
+                <a href="https://www.youtube.com/watch?v=ok4elvj5jwE" class="gradient-link">https://www.youtube.com/watch?v=ok4elvj5jwE</a><br/><br/>
+
+                <strong>3. L’évolution et les innovations</strong><br/><br/>
+                Du moteur Diesel de 1897 à l'injection électronique moderne, les moteurs sont devenus plus sobres et puissants (turbocompresseurs). Cependant, face aux défis climatiques, ils cèdent aujourd'hui peu à peu la place à l'électrique.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                Il a permis la mobilité mondiale, l'essor de l'aviation et la mécanisation de l'agriculture. Malgré son impact environnemental, il reste l'une des inventions les plus influentes de l'histoire moderne.
+            </h4>
+
+            <img class="avatar" src="https://generation-automoto.fr/wp-content/uploads/2025/04/evolution-des-moteurs-a-combustion.jpg" alt="Evolution Moteur">
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

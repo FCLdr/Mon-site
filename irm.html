@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - L'IRM</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">L'IRM</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une découverte issue du monde des atomes</strong><br/><br/>
+                L'histoire de l'IRM commence dans les laboratoires de physique nucléaire. En 1946, Felix Bloch et Edward Purcell découvrent la Résonance Magnétique Nucléaire (RMN). À l'origine, cette technique ne servait qu'à étudier la structure chimique des molécules. Il faudra attendre 1973 pour que Paul Lauterbur transforme ces signaux en images.<br/><br/>
+
+                <img class="avatar" src="https://www.cite-sciences.fr/fileadmin/_migrated/pics/scanner-CGE-9000.JPG" alt="Ancien Scanner IRM">
+
+                <strong>2. Le fonctionnement : Une danse de protons</strong><br/><br/>
+                Le corps humain est composé à environ 60% d'eau, et donc de protons. Imaginez que chaque proton est une petite boussole :
+                <br/><br/>
+                * <strong>L'alignement :</strong> L'aimant géant force les protons à s'aligner.<br/>
+                * <strong>La bascule :</strong> Une onde radio fait basculer ces protons.<br/>
+                * <strong>La relaxation :</strong> En revenant à leur position, ils émettent un signal capté par la machine pour dessiner une carte ultra-précise des tissus.<br/><br/>
+
+                
+
+                <a href="https://www.youtube.com/watch?v=ljeXmmR0T7M" class="gradient-link">https://www.youtube.com/watch?v=ljeXmmR0T7M</a><br/><br/>
+
+                <img class="avatar" src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2009/04/l-irm.jpg" alt="Schéma fonctionnement IRM">
+
+                <strong>3. L'évolution et le défi du champ magnétique</strong><br/><br/>
+                Pour obtenir des images nettes, on utilise des aimants supraconducteurs plongés dans de l'hélium liquide à **-269°C**. Le plus grand défi marketing fut de supprimer le mot "Nucléaire" pour devenir "IRM" afin de rassurer les patients, car la machine n'utilise aucune radioactivité.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                L'IRM a changé la neurologie et l'oncologie, permettant de détecter des tumeurs de quelques millimètres sans ouvrir le patient. Aujourd'hui, des projets comme **Iseult** permettent de voir les neurones presque individuellement grâce à des aimants encore plus puissants.
+            </h4>
+
+            <img class="avatar" src="https://www.postdicom.com/images/blog-posts/Medical%20Imaging%20Technology%20Today%20and%20Where%20it%20is%20Headed(2)%20-%20Created%20by%20PostDICOM.jpg" alt="Technologie IRM moderne">
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - Le Processeur</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">Le Processeur</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une invention qui a révolutionné le calcul</strong><br/><br/>
+                L’histoire du processeur commence avec les premiers ordinateurs électroniques dans les années 1940. À l'époque, des machines énormes comme l’ENIAC utilisaient des milliers de tubes à vide. <br/><br/>
+
+                Le tournant majeur survient en 1971 avec la création du premier microprocesseur commercial par Intel : le <strong>4004</strong>. Ce petit composant a réuni toutes les fonctions de calcul sur une seule puce, lançant ainsi l’ère de l’informatique personnelle.<br/><br/>
+
+                <img class="avatar" src="https://img.freepik.com/vecteurs-libre/fond-processeur-micropuce-style-realiste_52683-58932.jpg?semt=ais_user_personalization&w=740&q=80" alt="Illustration d'un microprocesseur">
+
+                <strong>2. Le fonctionnement : transformer des signaux électriques en calculs</strong><br/><br/>
+                Véritable cerveau de l’ordinateur, le processeur interprète les instructions des programmes grâce à trois piliers :<br/><br/>
+                * <strong>L’Unité de Contrôle (CU) :</strong> elle orchestre l'exécution des ordres.<br/>
+                * <strong>L’Unité Arithmétique et Logique (ALU) :</strong> elle réalise les calculs mathématiques.<br/>
+                * <strong>La Mémoire Cache :</strong> elle stocke les données ultra-prioritaires pour y accéder en un temps record.<br/><br/>
+
+                Chaque opération s’effectue en quelques nanosecondes, permettant une puissance de calcul phénoménale.<br/><br/>
+
+                <a href="https://www.youtube.com/watch?v=Fs9WVyb2Ols" class="gradient-link">https://www.youtube.com/watch?v=Fs9WVyb2Ols</a><br/><br/>
+
+                
+               
+                <strong>3. L’évolution et les défis technologiques</strong><br/><br/>
+                Aujourd'hui, les ingénieurs parviennent à graver des milliards de transistors sur une puce de la taille d'un ongle. Les processeurs sont devenus <strong>multi-cœurs</strong> (plusieurs cerveaux travaillant ensemble) et se spécialisent désormais dans l'Intelligence Artificielle ou le rendu graphique (GPU).<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                Sans le processeur, aucun smartphone, serveur internet ou système médical moderne ne pourrait fonctionner. Il a permis d'automatiser des tâches complexes et de rendre l'information accessible instantanément à l'échelle planétaire.<br/><br/>
+
+                <img class="avatar" src="https://media.lesechos.com/api/v1/images/view/5d42a5703e454660253d21a1/1280x720/ech21059134-1.jpg" alt="Usine de fabrication de processeurs">
+            </h4>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

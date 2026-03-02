@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engilearn - La Pile</title>
+    <style>
+        :root {
+            --bg: #0b0d11;
+            --text: #e8eef9;
+            --muted: #cdcdcd;
+            --accent: #0b5910;
+            --accent-2: #0bf45d;
+            --card: #121621;
+            --glass: rgba(255, 255, 255, .06);
+            --border: rgba(255, 255, 255, .12);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, .15), transparent 60%),
+                        radial-gradient(1000px 700px at -10% 10%, rgba(0, 224, 209, .1), transparent 55%),
+                        var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: min(1000px, 92%); margin-inline: auto; }
+
+        header {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 17, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav { display: flex; align-items: center; height: 68px; }
+        
+        .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: inherit; }
+
+        .logo {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            font-weight: 700;
+        }
+
+        .section-title { margin-top: 40px; font-size: clamp(24px, 5vw, 40px); }
+
+        .projets {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        h4 { font-size: 1.1rem; font-weight: normal; margin: 0; }
+        strong { color: #fff; font-weight: 700; }
+
+        .avatar {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 16px;
+            margin: 25px 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gradient-link {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 40px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .revealed { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a class="brand" href="engilearnweb.html">
+                <div class="logo">H</div>
+                <strong>Home</strong>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title reveal">La Pile Électrique</h2>
+
+        <article class="projets reveal">
+            <h4>
+                <strong>1. Une invention née d’une querelle scientifique</strong><br/><br/>
+                L’histoire de la pile électrique commence à la fin du XVIIIᵉ siècle. Le scientifique italien Luigi Galvani observe que les muscles d’une grenouille morte se contractent lorsqu’ils sont en contact avec deux métaux différents. Il pense découvrir une « électricité animale ».<br/><br/>
+
+                Un autre physicien italien, Alessandro Volta, n’est pas d’accord. Il démontre que l’électricité provient du contact entre les métaux et un liquide conducteur. En 1800, il invente la première pile électrique, appelée pile voltaïque, composée de disques de cuivre et de zinc empilés, séparés par des morceaux de carton imbibés d’eau salée.<br/><br/>
+
+                <img class="avatar" src="https://www.shutterstock.com/image-illustration/3d-rendering-electrical-energy-power-260nw-2502635225.jpg" alt="Illustration énergie électrique">
+
+                <strong>2. Le fonctionnement : une réaction chimique qui libère des électrons</strong><br/><br/>
+                Une pile transforme l’énergie chimique en énergie électrique grâce à une réaction entre deux matériaux différents appelés électrodes. Elle est composée d’une <strong>anode</strong> (pôle négatif), d’une <strong>cathode</strong> (pôle positif) et d’un <strong>électrolyte</strong> (conducteur).<br/><br/>
+
+                Lorsqu'elle est connectée, une réaction à l’anode libère des électrons qui circulent dans le circuit pour rejoindre la cathode. Ce mouvement constitue le courant électrique. Ce processus transforme les matériaux internes, ce qui explique pourquoi une pile finit par s’épuiser.<br/><br/>
+
+                <a href="https://www.youtube.com/watch?v=boFwdeTY3-g" class="gradient-link">https://www.youtube.com/watch?v=boFwdeTY3-g</a><br/><br/>
+
+                
+                <img class="avatar" src="https://physik.fr/wp-content/uploads/2022/12/Capture-decran-2022-12-21-a-01.45.10-1024x454.png" alt="Schéma de fonctionnement d'une pile">
+
+                <strong>3. L’évolution et la diversité des piles</strong><br/><br/>
+                Depuis la pile de Volta, de nombreux modèles ont vu le jour pour améliorer la performance et la sécurité. On distingue aujourd'hui les piles <strong>alcalines</strong>, les <strong>piles bouton</strong>, les piles rechargeables (<strong>NiMH</strong>) et les batteries <strong>lithium-ion</strong> omniprésentes dans nos smartphones.<br/><br/>
+
+                <strong>4. Pourquoi est-ce une révolution technologique ?</strong><br/><br/>
+                La pile a rendu l’électricité portable. Elle permet d'alimenter nos outils du quotidien (téléphones, ordinateurs), mais aussi des dispositifs vitaux comme les appareils médicaux ou les véhicules électriques, partout dans le monde.
+            </h4>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span>, made by FCL.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
